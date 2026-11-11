@@ -30,6 +30,7 @@
 .solar-explain{font-size:12px;color:#607688;line-height:1.7}
 @media(max-width:1000px){.solar-lab{grid-template-columns:1fr}.solar-photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.solar-callout{align-items:flex-start;flex-direction:column}.solar-meter{grid-template-columns:1fr 1fr}.solar-meter>div:last-child{grid-column:span 2}.solar-photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.solar-photo-art{min-height:155px;background:linear-gradient(145deg,#103b5d,#226281);display:flex;flex-direction:column;gap:8px;justify-content:center;align-items:center;color:white}.solar-photo-art strong{font-size:14px}
 </style>
 </head>
 <body>
@@ -97,11 +98,11 @@
 <div class="card col4 stat"><div class="accent-line"></div><div class="label">Corriente registrada</div><div class="value">0 <span style="font-size:16px">A</span></div><div class="detail">Lectura del multímetro en todas las posiciones probadas.</div></div>
 <div class="card col4 stat"><div class="accent-line"></div><div class="label">Potencia eléctrica</div><div class="value" style="font-size:22px">No estimable</div><div class="detail">No se cuenta con una medición simultánea de voltaje y corriente bajo carga definida.</div></div>
 </div>
-<div class="solar-photos">
-<figure class="solar-photo"><img loading="lazy" src="assets/soluz-practica-conexiones.jpg" alt="Equipo conectando las terminales del panel solar al multímetro en el césped"><figcaption>1 · Conexión del panel al multímetro</figcaption></figure>
-<figure class="solar-photo"><img loading="lazy" src="assets/soluz-practica-medicion.jpg" alt="Lectura de multímetro digital durante la práctica de campo"><figcaption>2 · Revisión de la lectura eléctrica</figcaption></figure>
-<figure class="solar-photo"><img loading="lazy" src="assets/soluz-practica-panel.jpg" alt="Panel fotovoltaico desde su cara posterior con multímetro durante una prueba"><figcaption>3 · Ensayo con orientación del panel</figcaption></figure>
-<figure class="solar-photo"><img loading="lazy" src="assets/soluz-practica-inclinacion.jpg" alt="Integrantes modificando el ángulo de inclinación del panel solar"><figcaption>4 · Búsqueda de la inclinación más favorable</figcaption></figure>
+<p class="note" style="margin:0 0 12px">Secuencia ilustrada de la práctica, basada en las fotografías compartidas por el equipo. No son imágenes de las mediciones.</p><div class="solar-photos">
+<figure class="solar-photo"><div class="solar-photo-art" role="img" aria-label="Conexión: Se conectaron los cables del panel al multímetro."><span aria-hidden="true" style="font-size:42px;color:#f5b700">🔌</span><strong>Conexión</strong></div><figcaption>Se conectaron los cables del panel al multímetro.</figcaption></figure>
+<figure class="solar-photo"><div class="solar-photo-art" role="img" aria-label="Lecturas: Se revisó el voltaje mientras se cambiaba la posición."><span aria-hidden="true" style="font-size:42px;color:#f5b700">🔎</span><strong>Lecturas</strong></div><figcaption>Se revisó el voltaje mientras se cambiaba la posición.</figcaption></figure>
+<figure class="solar-photo"><div class="solar-photo-art" role="img" aria-label="Orientación: Se probaron posiciones boca arriba y boca abajo."><span aria-hidden="true" style="font-size:42px;color:#f5b700">☀</span><strong>Orientación</strong></div><figcaption>Se probaron posiciones boca arriba y boca abajo.</figcaption></figure>
+<figure class="solar-photo"><div class="solar-photo-art" role="img" aria-label="Ajuste: Se buscó una superficie perpendicular a la luz solar."><span aria-hidden="true" style="font-size:42px;color:#f5b700">◩</span><strong>Ajuste</strong></div><figcaption>Se buscó una superficie perpendicular a la luz solar.</figcaption></figure>
 </div>
 <div class="card" style="margin-top:18px"><h3>Conclusión experimental</h3><p>Al modificar la orientación de un panel solar conectado a un multímetro, el equipo observó distintas lecturas y encontró un máximo de <b>0.131 V</b>. También registró <b>0 A</b> en todas las posiciones. El ensayo ilustra por qué interesa orientar la superficie fotovoltaica hacia el Sol, aunque por sí solo no permite determinar la eficiencia o potencia nominal del módulo. El simulador reproduce esta idea con un modelo geométrico simplificado y separa claramente los valores calculados de los medidos.</p><div class="source">Origen de los resultados: experimento de campo y cuatro fotografías proporcionados por el equipo de SOLUZ (noviembre de 2026). Modelo didáctico: proyección de radiación directa por ley del coseno de incidencia. Sin calibración experimental del módulo.</div></div>
 </section>
