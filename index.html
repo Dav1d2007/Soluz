@@ -31,7 +31,6 @@
 @media(max-width:1000px){.solar-lab{grid-template-columns:1fr}.solar-photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.solar-callout{align-items:flex-start;flex-direction:column}.solar-meter{grid-template-columns:1fr 1fr}.solar-meter>div:last-child{grid-column:span 2}.solar-photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .solar-photo-art{min-height:155px;background:linear-gradient(145deg,#103b5d,#226281);display:flex;flex-direction:column;gap:8px;justify-content:center;align-items:center;color:white}.solar-photo-art strong{font-size:14px}
-  <style>
 /* Intro / portada SOLUZ */
 .intro-overlay{
   position:fixed;
@@ -357,7 +356,6 @@ el('solarAlign').addEventListener('click',()=>{el('solarTilt').value=90-(+el('so
 el('solarReset').addEventListener('click',()=>{el('solarElevation').value=60;el('solarTilt').value=30;el('solarLight').value=100;el('solarShade').value=0;el('solarInvert').checked=false;updateSolar()});
 updateSolar();
 })();
-<script>
 /* Portada de bienvenida SOLUZ */
 (function(){
   const overlay = document.getElementById('introOverlay');
