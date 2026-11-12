@@ -357,5 +357,49 @@ el('solarAlign').addEventListener('click',()=>{el('solarTilt').value=90-(+el('so
 el('solarReset').addEventListener('click',()=>{el('solarElevation').value=60;el('solarTilt').value=30;el('solarLight').value=100;el('solarShade').value=0;el('solarInvert').checked=false;updateSolar()});
 updateSolar();
 })();
+<script>
+/* Portada de bienvenida SOLUZ */
+(function(){
+  const overlay = document.getElementById('introOverlay');
+  const enterBtn = document.getElementById('enterSoluz');
+  const solarBtn = document.getElementById('skipToSolar');
+  const tipText = document.getElementById('introTipText');
+
+  if(!overlay || !enterBtn || !solarBtn || !tipText) return;
+
+  const tips = [
+    'La captación solar mejora cuando la superficie del panel se orienta perpendicularmente a los rayos del Sol.',
+    'Una sombra parcial puede reducir notablemente el rendimiento de un panel fotovoltaico.',
+    'El simulador solar de SOLUZ distingue entre resultados experimentales y estimaciones didácticas.',
+    'En la práctica de campo, el valor máximo reportado por el equipo fue 0.131 V.',
+    'La corriente eléctrica no siempre se aprecia correctamente si la medición o la conexión no son las adecuadas.',
+    'SOLUZ combina identidad visual, simulación y documentación académica en una sola experiencia.'
+  ];
+
+  let tipIndex = 0;
+  function rotateTip(){
+    tipIndex = (tipIndex + 1) % tips.length;
+    tipText.textContent = tips[tipIndex];
+  }
+
+  const tipInterval = setInterval(rotateTip, 2800);
+
+  function closeIntro(goSolar){
+    overlay.classList.add('hidden');
+    clearInterval(tipInterval);
+    if(goSolar && typeof go === 'function'){
+      setTimeout(()=>go('solar'), 250);
+    }
+  }
+
+  enterBtn.addEventListener('click', ()=>closeIntro(false));
+  solarBtn.addEventListener('click', ()=>closeIntro(true));
+
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Enter' || e.key === 'Escape'){
+      closeIntro(false);
+    }
+  });
+})();
 </script>
 </body></html>
