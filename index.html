@@ -31,6 +31,153 @@
 @media(max-width:1000px){.solar-lab{grid-template-columns:1fr}.solar-photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.solar-callout{align-items:flex-start;flex-direction:column}.solar-meter{grid-template-columns:1fr 1fr}.solar-meter>div:last-child{grid-column:span 2}.solar-photos{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .solar-photo-art{min-height:155px;background:linear-gradient(145deg,#103b5d,#226281);display:flex;flex-direction:column;gap:8px;justify-content:center;align-items:center;color:white}.solar-photo-art strong{font-size:14px}
+  <style>
+/* Intro / portada SOLUZ */
+.intro-overlay{
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(245,183,0,.16), transparent 28%),
+    radial-gradient(circle at 80% 25%, rgba(70,174,199,.14), transparent 26%),
+    radial-gradient(circle at 50% 80%, rgba(255,255,255,.06), transparent 18%),
+    linear-gradient(135deg,#0b2a43 0%, #123B5D 45%, #1a5a79 100%);
+  overflow:hidden;
+  transition:opacity .45s ease, visibility .45s ease;
+}
+.intro-overlay.hidden{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.intro-overlay:before,
+.intro-overlay:after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.08);
+}
+.intro-overlay:before{
+  width:520px;
+  height:520px;
+  right:-140px;
+  top:-120px;
+  box-shadow:0 0 0 55px rgba(255,255,255,.025),0 0 0 120px rgba(255,255,255,.015);
+}
+.intro-overlay:after{
+  width:340px;
+  height:340px;
+  left:-110px;
+  bottom:-90px;
+  box-shadow:0 0 0 36px rgba(245,183,0,.06),0 0 0 92px rgba(255,255,255,.02);
+}
+.intro-card{
+  position:relative;
+  z-index:2;
+  width:min(92vw,820px);
+  color:#fff;
+  text-align:center;
+  padding:38px 24px 28px;
+}
+.intro-logo-wrap{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:18px;
+}
+.intro-logo-badge{
+  width:110px;
+  height:110px;
+  border-radius:28px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  backdrop-filter:blur(7px);
+  box-shadow:0 18px 50px rgba(0,0,0,.18);
+}
+.intro-brand{
+  font-size:clamp(38px,6vw,72px);
+  font-weight:900;
+  letter-spacing:-.07em;
+  line-height:1;
+  margin:0 0 8px;
+}
+.intro-sub{
+  color:#ffd96a;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+.intro-desc{
+  margin:0 auto 22px;
+  max-width:640px;
+  color:#d7e8f2;
+  font-size:15px;
+  line-height:1.65;
+}
+.intro-actions{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+.intro-btn{
+  border:0;
+  border-radius:14px;
+  padding:13px 20px;
+  font-weight:850;
+  cursor:pointer;
+}
+.intro-btn.primary{
+  background:#F5B700;
+  color:#17354b;
+}
+.intro-btn.secondary{
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.12);
+}
+.intro-tip-box{
+  max-width:630px;
+  margin:0 auto;
+  padding:14px 16px;
+  border-radius:16px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.11);
+  backdrop-filter:blur(6px);
+}
+.intro-tip-label{
+  display:block;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:#ffd96a;
+  margin-bottom:6px;
+}
+.intro-tip{
+  font-size:14px;
+  color:#eef7fb;
+  min-height:42px;
+}
+.intro-mini{
+  margin-top:15px;
+  font-size:11px;
+  color:#b9d0de;
+}
+@media (max-width:640px){
+  .intro-card{padding:28px 16px 20px}
+  .intro-logo-badge{width:92px;height:92px;border-radius:24px}
+  .intro-desc{font-size:14px}
+  .intro-tip{font-size:13px}
+}
 </style>
 </head>
 <body>
